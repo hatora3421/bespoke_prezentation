@@ -1,0 +1,111 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Java8 勉強会
+
+    // build:css styles/styles.css
+    //- Check out 'src/bower_components/prism/themes/' for available themes
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+    // endbuild
+
+  body
+
+    article
+
+      section
+        h1 Java8勉強会
+
+      section
+        h2 2014/03/18 Javs SE8 リリース
+
+      section
+        h2 動かしてみた？？
+
+      section
+        h2 Revolution
+
+      section
+        h2.bullet Java SE8
+        ul
+          li Lamda expressions
+          li Date And Time API
+          li etc
+
+      section
+        h2 <a href="http://www.slideshare.net/OracleMiddleJP/new-feature-of-java-se-8">参考</a>
+
+      section
+        h2 Lamda expression 1
+        pre
+          code.language-javascript.
+           List<String> list = Arrays.asList("miwa", "gotou");
+           list.forEach(System.out::println);
+        hr
+        h4 ラムダ式とメソッド参照
+
+      section
+        h2 Lamda expression 2
+        pre
+          code.language-javascript.
+           List<String> list = Arrays.asList("miwa", "gotou");
+           list.parallelStream()
+               .filter(s -> s.startsWith("m"))
+               .map(s -> s.toUpperCase())
+               .forEach(System.out::println);
+        hr
+        h4 ラムダ式とStream API
+
+      section
+        h2 Lamda expression 3
+        pre
+          code.language-javascript.
+           List<String> list = new ArrayList()<>;
+           try
+           {
+             Files.lines(Paths.get(fileName))
+                  .forEach(s -> list.add("<" + s + ">"));
+           }
+           catch (IOException e)
+           {
+             throw new UncheckedIOException(e);
+           }
+        hr
+        h4 ラムダ式とetc...
+
+      section
+        h4 訳わからん
+
+      section
+        h2.bullet Project Lamda
+        ul
+          li ラムダ式
+          li メソッド参照
+          li 実質的にfinal
+          li ターゲット型推論
+          li 交差型キャスト
+          li インターフェス デフォルトメソッド
+          li staticインターフェースメソッド
+          li 関数型インターフェース
+
+      section
+        h2 Revolution
+
+      section
+        h2 チームでJava8導入しましょう
+
+    // build:js scripts/scripts.js
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
+    script(src='bower_components/bespoke-touch/dist/bespoke-touch.min.js')
+    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/bespoke-forms/dist/bespoke-forms.min.js')
+    script(src='bower_components/prism/prism.js')
+    script(src='scripts/main.js')
+    // endbuild
