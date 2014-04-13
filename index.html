@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Java8 勉強会</title>
+    <link rel="stylesheet" href="styles/styles.css"/>
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>Java8勉強会</h1>
+      </section>
+      <section>
+        <h2>2014/03/18 Javs SE8 リリース</h2>
+      </section>
+      <section>
+        <h2>動かしてみた？？</h2>
+      </section>
+      <section>
+        <h2>Revolution</h2>
+      </section>
+      <section>
+        <h2 class="bullet">Java SE8</h2>
+        <ul>
+          <li>Lamda expressions</li>
+          <li>Date And Time API</li>
+          <li>etc</li>
+        </ul>
+      </section>
+      <section>
+        <h2><a href="http://www.slideshare.net/OracleMiddleJP/new-feature-of-java-se-8">参考</a></h2>
+      </section>
+      <section>
+        <h2>Lamda expression 1</h2>
+        <pre><code class="language-javascript">List<String> list = Arrays.asList("miwa", "gotou");
+list.forEach(System.out::println);</code></pre>
+        <hr>
+        <h4>ラムダ式とメソッド参照</h4>
+      </section>
+      <section>
+        <h2>Lamda expression 2</h2>
+        <pre><code class="language-javascript">List<String> list = Arrays.asList("miwa", "gotou");
+list.parallelStream()
+    .filter(s -> s.startsWith("m"))
+    .map(s -> s.toUpperCase())
+    .forEach(System.out::println);</code></pre>
+        <hr>
+        <h4>ラムダ式とStream API</h4>
+      </section>
+      <section>
+        <h2>Lamda expression 3</h2>
+        <pre><code class="language-javascript">List<String> list = new ArrayList()<>;
+try
+{
+  Files.lines(Paths.get(fileName))
+       .forEach(s -> list.add("<" + s + ">"));
+}
+catch (IOException e)
+{
+  throw new UncheckedIOException(e);
+}</code></pre>
+        <hr>
+        <h4>ラムダ式とetc...</h4>
+      </section>
+      <section>
+        <h4>訳わからん</h4>
+      </section>
+      <section>
+        <h2 class="bullet">Project Lamda</h2>
+        <ul>
+          <li>ラムダ式</li>
+          <li>メソッド参照</li>
+          <li>実質的にfinal</li>
+          <li>ターゲット型推論</li>
+          <li>交差型キャスト</li>
+          <li>インターフェス デフォルトメソッド</li>
+          <li>staticインターフェースメソッド</li>
+          <li>関数型インターフェース</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Revolution</h2>
+      </section>
+      <section>
+        <h2>チームでJava8導入しましょう</h2>
+      </section>
+    </article>
+    <script src="scripts/scripts.js"></script>
+  </body>
+</html>
