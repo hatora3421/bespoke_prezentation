@@ -9,7 +9,7 @@
   <body>
     <article>
       <section>
-        <h1>Java8のお話</h1>〜from Old Java To Modern Java〜
+        <h1>Java8のお話</h1>〜from Old Java to Modern Java〜
       </section>
       <section>
         <h2>2014/03/18 JavaSE8リリース</h2>
@@ -28,7 +28,7 @@
       <section>
         <h2 class="bullet">Java SE8</h2>
         <ul>
-          <li>Lamda expressions</li>
+          <li>Lambda expressions</li>
           <li>Date And Time API</li>
           <li>etc</li>
         </ul>
@@ -37,14 +37,69 @@
         <h2><a href="http://www.slideshare.net/OracleMiddleJP/new-feature-of-java-se-8">参考</a></h2>
       </section>
       <section>
-        <h2>Lamda expression 1</h2>
+        <h2 class="bullet">Lambda expression</h2>
+        <ul>
+          <li>マルチコア</li>
+          <li>関数型プログラミング</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="bullet">関数型プログラミング</h2>
+        <ul>
+          <li>Haskell</li>
+          <li>Scala</li>
+          <li>Go</li>
+        </ul>
+      </section>
+      <section>
+        <h2>関数型プログラミングとは</h2>
+        <p style="font-size:20px;color:red">参照透過性</p>
+        <p style="font-size:20px;color:red">第一級関数</p>
+      </section>
+      <section>
+        <h2 class="bullet">マルチコア</h2>
+        <ul>
+          <li>　細粒度の並列処理</li>
+          <li>　Iteretor</li>
+          <li>　外部 → 内部</li>
+          <li>バルク処理</li>
+          <li style="color:red">Stream</li>
+          <li>匿名クラス</li>
+          <li>Lambda</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Lambda expression 1</h2>
+        <pre><code class="language-javascript">Runnable run = new Runnable()
+{
+   @Override
+   public void run()
+   {
+     System.out.println("run");
+   }
+}
+
+Thread th = new Thread(run).start();</code></pre>
+        <hr>
+        <h4>匿名クラス</h4>
+      </section>
+      <section>
+        <h2>Lambda expression 2</h2>
+        <pre><code class="language-javascript">Thread th = new Thread(
+            () -> System.out.println("run"));
+th.start();</code></pre>
+        <hr>
+        <h4>匿名クラス → ラムダ式</h4>
+      </section>
+      <section>
+        <h2>Lambda expression 3</h2>
         <pre><code class="language-javascript">List<String> list = Arrays.asList("miwa", "gotou");
 list.forEach(System.out::println);</code></pre>
         <hr>
         <h4>ラムダ式とメソッド参照</h4>
       </section>
       <section>
-        <h2>Lamda expression 2</h2>
+        <h2>Lambda expression 4</h2>
         <pre><code class="language-javascript">List<String> list = Arrays.asList("miwa", "gotou");
 list.parallelStream()
     .filter(s -> s.startsWith("m"))
@@ -54,7 +109,7 @@ list.parallelStream()
         <h4>ラムダ式とStream API</h4>
       </section>
       <section>
-        <h2>Lamda expression 3</h2>
+        <h2>Lambda expression 5</h2>
         <pre><code class="language-javascript">List<String> list = new ArrayList()<>;
 try
 {
@@ -72,7 +127,7 @@ catch (IOException e)
         <h4>訳わからん</h4>
       </section>
       <section>
-        <h2 class="bullet">Project Lamda</h2>
+        <h2 class="bullet">Project Lambda</h2>
         <ul>
           <li>ラムダ式</li>
           <li>メソッド参照</li>
@@ -85,10 +140,16 @@ catch (IOException e)
         </ul>
       </section>
       <section>
+        <h2>JVM</h2>
+        <h3>HotSpot + JRockit</h3>
+        <h3>Invoke Dynamic</h3>
+        <h3>PermGen 除去</h3>
+      </section>
+      <section>
         <h2>Revolution</h2>
       </section>
       <section>
-        <h2>チームでJava8導入しましょう</h2>
+        <h2>Java8導入計画！！</h2>
       </section>
     </article>
     <script src="scripts/scripts.js"></script>
